@@ -1,0 +1,331 @@
+[
+  {
+    "id": 1,
+    "title": "The Witcher 3: Wild Hunt",
+    "rating": 9.3,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One",
+      "Nintendo Switch"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 2
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "witcher_cover.jpg",
+    "screenshots": [
+      "witcher_screen1.jpg",
+      "witcher_screen2.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Red Dead Redemption 2",
+    "rating": 9.8,
+    "platform": [
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 32
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "red_dead_cover.jpg",
+    "screenshots": [
+      "red_dead_screen1.jpg",
+      "red_dead_screen2.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "The Legend of Zelda: Breath of the Wild",
+    "rating": 9.7,
+    "platform": [
+      "Nintendo Switch"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "zelda_cover.jpg",
+    "screenshots": [
+      "zelda_screen1.jpg",
+      "zelda_screen2.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Grand Theft Auto V",
+    "rating": 9.5,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 30
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "gta5_cover.jpg",
+    "screenshots": [
+      "gta5_screen1.jpg",
+      "gta5_screen2.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "God of War",
+    "rating": 9.6,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "god_of_war_cover.jpg",
+    "screenshots": [
+      "god_of_war_screen1.jpg",
+      "god_of_war_screen2.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Super Mario Odyssey",
+    "rating": 9.5,
+    "platform": [
+      "Nintendo Switch"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "mario_odyssey_cover.jpg",
+    "screenshots": [
+      "mario_odyssey_screen1.jpg",
+      "mario_odyssey_screen2.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Bloodborne",
+    "rating": 9.4,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 6
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "bloodborne_cover.jpg",
+    "screenshots": [
+      "bloodborne_screen1.jpg",
+      "bloodborne_screen2.jpg"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Dark Souls III",
+    "rating": 9.2,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 6
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "dark_souls_cover.jpg",
+    "screenshots": [
+      "dark_souls_screen1.jpg",
+      "dark_souls_screen2.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Persona 5",
+    "rating": 9.5,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "persona5_cover.jpg",
+    "screenshots": [
+      "persona5_screen1.jpg",
+      "persona5_screen2.jpg"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Horizon Zero Dawn",
+    "rating": 9.4,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "horizon_cover.jpg",
+    "screenshots": [
+      "horizon_screen1.jpg",
+      "horizon_screen2.jpg"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Uncharted 4: A Thief's End",
+    "rating": 9.7,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "uncharted4_cover.jpg",
+    "screenshots": [
+      "uncharted4_screen1.jpg",
+      "uncharted4_screen2.jpg"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "The Last of Us Part II",
+    "rating": 9.5,
+    "platform": [
+      "PlayStation 4"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 0
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "last_of_us2_cover.jpg",
+    "screenshots": [
+      "last_of_us2_screen1.jpg",
+      "last_of_us2_screen2.jpg"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Final Fantasy XV",
+    "rating": 9.1,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 4
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "final_fantasy_cover.jpg",
+    "screenshots": [
+      "final_fantasy_screen1.jpg",
+      "final_fantasy_screen2.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Assassin's Creed Odyssey",
+    "rating": 9.0,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 2
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "assassins_creed_cover.jpg",
+    "screenshots": [
+      "assassins_creed_screen1.jpg",
+      "assassins_creed_screen2.jpg"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Cyberpunk 2077",
+    "rating": 8.9,
+    "platform": [
+      "PC",
+      "PlayStation 4",
+      "Xbox One"
+    ],
+    "multiplayer": {
+      "offline": 0,
+      "online": 32
+    },
+    "language": [
+      "English",
+      "Russian"
+    ],
+    "coverImage": "cyberpunk_cover.jpg",
+    "screenshots": [
+      "cyberpunk_screen1.jpg",
+      "cyberpunk_screen2.jpg"
+    ]
+  }
+]
