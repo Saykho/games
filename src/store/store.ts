@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import gamesReducer from "./slices/game-slice";
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        games: gamesReducer,
+    },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({
             serializableCheck: false,
