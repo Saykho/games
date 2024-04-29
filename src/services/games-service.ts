@@ -5,7 +5,7 @@ export class GamesService {
   static getGames(): Promise<Game[]> {
     return new Promise<Game[]>((resolve) => {
       // mock api
-      resolve(mockGames);
+      resolve(mockGames as Game[]);
     });
   }
 }
