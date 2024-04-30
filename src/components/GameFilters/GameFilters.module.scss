@@ -1,0 +1,10 @@
+.filters {
+  width: 200px;
+  margin-bottom: 20px;
+
+  :global {
+    .ant-select {
+      width: 100%;
+    }
+  }
+}

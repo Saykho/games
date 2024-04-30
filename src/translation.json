@@ -1,2 +1,12 @@
 {
+  "language": {
+    "English": "Английский",
+    "Russian": "Русский"
+  },
+  "gameCard": {
+    "title": "Название",
+    "rating": "Рейтинг",
+    "platform": "Платформа",
+    "language": "Язык"
+  }
 }

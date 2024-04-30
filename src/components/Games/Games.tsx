@@ -5,11 +5,11 @@ import { getGamesInfoSelector } from "../../store/slices";
 import { getGames } from "../../store";
 import { GameGard } from "../GameCard";
 import styles from "./Games.module.scss";
+import { GameFilters } from "../GameFilters";
 
 export const Games: React.FC = () => {
   const dispatch = useAppDispatch();
   const games = useSelector(getGamesInfoSelector);
-  console.log(games);
 
   useEffect(() => {
     dispatch(getGames());
@@ -17,6 +17,7 @@ export const Games: React.FC = () => {
 
   return (
     <div className={styles.games}>
+      <GameFilters />
       {games.map((game) => (
         <GameGard game={game} key={game.id} />
       ))}

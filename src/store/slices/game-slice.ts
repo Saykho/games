@@ -3,7 +3,7 @@ import { Game } from "../../models";
 import { getGames } from "../async-actions";
 import { Language, StateStatus } from "../../enum";
 import { GameActions } from "../actions";
-import { applyGameFilters } from "../../components/helpers/apply-game-filters";
+import { applyGameFilters } from "../../helpers";
 
 interface GamesState {
   allGames: Game[];
@@ -72,6 +72,13 @@ export const getGamesInfoSelector = createSelector(
   gamesStateSelector,
   (state) => {
     return state.games;
+  },
+);
+
+export const getGameFiltersSelector = createSelector(
+  gamesStateSelector,
+  (state) => {
+    return state.gameFilters;
   },
 );
 

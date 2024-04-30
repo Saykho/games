@@ -1,5 +1,5 @@
-import { Game } from "../../models";
-import { Language } from "../../enum";
+import { Game } from "../models";
+import { Language } from "../enum";
 
 export function applyGameFilters(
   games: Game[],

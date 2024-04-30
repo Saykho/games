@@ -1,7 +1,7 @@
 import React from "react";
 import { Carousel, DescriptionsProps, Typography } from "antd";
+import { useTranslation } from "react-i18next";
 import { Game } from "../../models";
-
 import styles from "./GameGard.module.scss";
 
 interface GameGardProps {
@@ -9,22 +9,23 @@ interface GameGardProps {
 }
 
 export const GameGard: React.FC<GameGardProps> = ({ game }) => {
+  const { t } = useTranslation();
   const params: DescriptionsProps["items"] = [
     {
-      label: "Title",
+      label: t("gameCard.title"),
       children: game.title,
     },
     {
-      label: "Rating",
+      label: t("gameCard.rating"),
       children: game.rating,
     },
     {
-      label: "Platform",
+      label: t("gameCard.platform"),
       children: game.platform.join(", "),
     },
     {
-      label: "Language",
-      children: game.language.join(", "),
+      label: t("gameCard.language"),
+      children: game.language.map((l) => t(`language.${l}`)).join(", "),
     },
   ];
 
