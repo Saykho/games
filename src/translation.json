@@ -11,5 +11,10 @@
     "multiplayer": "Коичество игроков",
     "online": "Online",
     "offline": "Offline"
+  },
+  "gameFilters": {
+    "applyMultiplayer": "Фильтровать по количеству игроков",
+    "online": "Online",
+    "offline": "Offline"
   }
 }

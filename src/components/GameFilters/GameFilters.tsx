@@ -1,11 +1,14 @@
 import React from "react";
-import { Select } from "antd";
+import { Button, Form, InputNumber, Select } from "antd";
+import { useTranslation } from "react-i18next";
 import { useLanguages } from "./useLanguages";
 import styles from "./GameFilters.module.scss";
 import { useFilters } from "./useFilters";
 import { usePlatforms } from "./usePlatforms";
+import { Multiplayer } from "../../models";
 
 export const GameFilters: React.FC = () => {
+  const { t } = useTranslation();
   const { languages } = useLanguages();
   const { platforms } = usePlatforms();
   const {
@@ -13,6 +16,8 @@ export const GameFilters: React.FC = () => {
     setLanguages,
     platforms: filteredPlatforms,
     setPlatforms,
+    multiplayer: filteredMultiplayer,
+    setMultiplayer,
   } = useFilters();
 
   return (
@@ -32,6 +37,29 @@ export const GameFilters: React.FC = () => {
         onChange={setPlatforms}
         value={filteredPlatforms}
       />
+
+      <Form<Multiplayer>
+        onFinish={setMultiplayer}
+        initialValues={filteredMultiplayer}
+      >
+        <Form.Item<number>
+          label={t("gameFilters.online")}
+          name="online"
+          rules={[{ required: true, message: "" }]}
+        >
+          <InputNumber min={0} />
+        </Form.Item>
+
+        <Form.Item<number>
+          label={t("gameFilters.offline")}
+          name="offline"
+          rules={[{ required: true, message: "" }]}
+        >
+          <InputNumber min={0} />
+        </Form.Item>
+
+        <Button htmlType="submit">{t("gameFilters.applyMultiplayer")}</Button>
+      </Form>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { Game } from "../../models";
+import { Game, Multiplayer } from "../../models";
 import { getGames } from "../async-actions";
 import { Language, Platform, StateStatus } from "../../enum";
 import { GameActions } from "../actions";
@@ -11,6 +11,7 @@ interface GamesState {
   gameFilters: {
     languages: Language[];
     platforms: Platform[];
+    multiplayer: Multiplayer;
   };
   status: StateStatus;
   error: string | null;
@@ -22,6 +23,10 @@ const initialState: GamesState = {
   gameFilters: {
     languages: [],
     platforms: [],
+    multiplayer: {
+      offline: 0,
+      online: 0,
+    },
   },
   status: StateStatus.idle,
   error: null,

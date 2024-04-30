@@ -1,4 +1,4 @@
-import { Game } from "../models";
+import { Game, Multiplayer } from "../models";
 import { Language, Platform } from "../enum";
 
 export function applyGameFilters(
@@ -6,6 +6,7 @@ export function applyGameFilters(
   filters: {
     languages: Language[];
     platforms: Platform[];
+    multiplayer: Multiplayer;
   },
 ): Game[] {
   const languages = filters.languages ?? [];
@@ -18,5 +19,16 @@ export function applyGameFilters(
     platforms.length > 0 ? g.platform.some((p) => platforms.includes(p)) : true,
   );
 
-  return filteredByPlatforms;
+  const multiplayer = filters.multiplayer ?? {
+    online: 0,
+    offline: 0,
+  };
+
+  const filteredByMultiplayer = filteredByPlatforms.filter(
+    (g) =>
+      multiplayer.offline <= g.multiplayer.offline &&
+      multiplayer.online <= g.multiplayer.online,
+  );
+
+  return filteredByMultiplayer;
 }
