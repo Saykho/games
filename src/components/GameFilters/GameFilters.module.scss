@@ -1,10 +1,26 @@
 .filters {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
   width: 200px;
   margin-bottom: 20px;
+}
 
+.selectFilters {
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
   :global {
-    .ant-select {
-      width: 100%;
+    .ant-form-item-control-input-content {
+      flex: none;
+    }
+    .ant-form-item {
+      margin-bottom: 20px;
     }
   }
 }

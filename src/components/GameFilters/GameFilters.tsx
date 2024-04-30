@@ -22,25 +22,30 @@ export const GameFilters: React.FC = () => {
 
   return (
     <div className={styles.filters}>
-      <Select
-        mode="multiple"
-        options={languages}
-        placeholder="Выберите язык"
-        onChange={setLanguages}
-        value={filteredLanguages}
-      />
+      <div className={styles.selectFilters}>
+        <Select
+          mode="multiple"
+          options={languages}
+          placeholder="Выберите язык"
+          onChange={setLanguages}
+          value={filteredLanguages}
+          className={styles.select}
+        />
 
-      <Select
-        mode="multiple"
-        options={platforms}
-        placeholder="Выберите платформу"
-        onChange={setPlatforms}
-        value={filteredPlatforms}
-      />
-
+        <Select
+          mode="multiple"
+          options={platforms}
+          placeholder="Выберите платформу"
+          onChange={setPlatforms}
+          value={filteredPlatforms}
+          className={styles.select}
+        />
+      </div>
       <Form<Multiplayer>
         onFinish={setMultiplayer}
         initialValues={filteredMultiplayer}
+        requiredMark="optional"
+        className={styles.form}
       >
         <Form.Item<number>
           label={t("gameFilters.online")}
