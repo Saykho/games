@@ -1,16 +1,26 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { Game } from "../../models";
 import { getGames } from "../async-actions";
-import { StateStatus } from "../../enum";
+import { Language, StateStatus } from "../../enum";
+import { GameActions } from "../actions";
+import { applyGameFilters } from "../../components/helpers/apply-game-filters";
 
 interface GamesState {
+  allGames: Game[];
   games: Game[];
+  gameFilters: {
+    languages: Language[];
+  };
   status: StateStatus;
   error: string | null;
 }
 
 const initialState: GamesState = {
+  allGames: [],
   games: [],
+  gameFilters: {
+    languages: [],
+  },
   status: StateStatus.idle,
   error: null,
 };
@@ -28,7 +38,8 @@ export const gamesSlice = createSlice({
     builder.addCase(getGames.fulfilled, (state, { payload }) => ({
       ...state,
       status: StateStatus.idle,
-      games: payload,
+      allGames: payload,
+      games: applyGameFilters(payload, state.gameFilters),
     }));
     builder.addCase(getGames.rejected, (state, { payload }) => {
       if (payload) {
@@ -42,6 +53,11 @@ export const gamesSlice = createSlice({
         status: StateStatus.idle,
       };
     });
+    builder.addCase(GameActions.setFilters, (state, { payload }) => ({
+      ...state,
+      gameFilters: payload,
+      games: applyGameFilters(state.allGames, payload),
+    }));
   },
 });
 
