@@ -1,0 +1,40 @@
+.card {
+  display: flex;
+  width: 760px;
+  height: 200px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.avatar {
+  height: 200px;
+  width: 200px;
+}
+
+.carousel {
+  width: 300px;
+  height: 200px;
+}
+
+.cardCarousel {
+  width: 100px;
+  height: 200px;
+}
+
+.params {
+  padding: 8px;
+  width: 240px;
+  text-align: left;
+}
+
+.param {
+  line-height: 12px;
+
+  &Name {
+    font-weight: 600;
+    margin-right: 8px;
+  }
+}
+

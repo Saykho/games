@@ -5,6 +5,7 @@ import { store } from "./store";
 import "./index.css";
 import "./i18n";
 import App from "./App";
+import "reset-css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,

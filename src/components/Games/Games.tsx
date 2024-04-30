@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Flex } from "antd";
 import { useAppDispatch } from "../../hooks";
 import { getGamesInfoSelector } from "../../store/slices";
-import { getGames } from "../../store/async-actions";
+import { getGames } from "../../store";
 import { GameGard } from "../GameCard";
+import styles from "./Games.module.scss";
 
 export const Games: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -16,10 +16,10 @@ export const Games: React.FC = () => {
   }, []);
 
   return (
-    <Flex wrap="wrap">
+    <div className={styles.games}>
       {games.map((game) => (
         <GameGard game={game} key={game.id} />
       ))}
-    </Flex>
+    </div>
   );
 };
