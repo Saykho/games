@@ -16,5 +16,10 @@
     "applyMultiplayer": "Фильтровать по количеству",
     "online": "Online",
     "offline": "Offline"
+  },
+  "gameSort": {
+    "Default": "По умолчанию",
+    "RatingAsc": "Сначала непопулярные",
+    "RatingDesc": "Сначала популярные"
   }
 }

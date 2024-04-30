@@ -6,6 +6,8 @@ import styles from "./GameFilters.module.scss";
 import { useFilters } from "./useFilters";
 import { usePlatforms } from "./usePlatforms";
 import { Multiplayer } from "../../models";
+import { useSort } from "./useSort";
+import { useGameSorts } from "./useGameSorts";
 
 export const GameFilters: React.FC = () => {
   const { t } = useTranslation();
@@ -19,6 +21,9 @@ export const GameFilters: React.FC = () => {
     multiplayer: filteredMultiplayer,
     setMultiplayer,
   } = useFilters();
+
+  const { gameSorts } = useGameSorts();
+  const { sort, setSort } = useSort();
 
   return (
     <div className={styles.filters}>
@@ -41,6 +46,7 @@ export const GameFilters: React.FC = () => {
           className={styles.select}
         />
       </div>
+
       <Form<Multiplayer>
         onFinish={setMultiplayer}
         initialValues={filteredMultiplayer}
@@ -65,6 +71,8 @@ export const GameFilters: React.FC = () => {
 
         <Button htmlType="submit">{t("gameFilters.applyMultiplayer")}</Button>
       </Form>
+
+      <Select value={sort} onChange={setSort} options={gameSorts} />
     </div>
   );
 };

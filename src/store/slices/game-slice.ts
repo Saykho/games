@@ -1,9 +1,9 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { Game, Multiplayer } from "../../models";
 import { getGames } from "../async-actions";
-import { Language, Platform, StateStatus } from "../../enum";
+import { GameSort, Language, Platform, StateStatus } from "../../enum";
 import { GameActions } from "../actions";
-import { applyGameFilters } from "../../helpers";
+import { applyGameFilters, applyGameSort } from "../../helpers";
 
 interface GamesState {
   allGames: Game[];
@@ -13,6 +13,8 @@ interface GamesState {
     platforms: Platform[];
     multiplayer: Multiplayer;
   };
+  gameSort: GameSort;
+
   status: StateStatus;
   error: string | null;
 }
@@ -28,6 +30,8 @@ const initialState: GamesState = {
       online: 0,
     },
   },
+  gameSort: GameSort.Default,
+
   status: StateStatus.idle,
   error: null,
 };
@@ -46,7 +50,10 @@ export const gamesSlice = createSlice({
       ...state,
       status: StateStatus.idle,
       allGames: payload,
-      games: applyGameFilters(payload, state.gameFilters),
+      games: applyGameSort(
+        applyGameFilters(payload, state.gameFilters),
+        state.gameSort,
+      ),
     }));
     builder.addCase(getGames.rejected, (state, { payload }) => {
       if (payload) {
@@ -63,7 +70,18 @@ export const gamesSlice = createSlice({
     builder.addCase(GameActions.setFilters, (state, { payload }) => ({
       ...state,
       gameFilters: payload,
-      games: applyGameFilters(state.allGames, payload),
+      games: applyGameSort(
+        applyGameFilters(state.allGames, payload),
+        state.gameSort,
+      ),
+    }));
+    builder.addCase(GameActions.setSort, (state, { payload }) => ({
+      ...state,
+      gameSort: payload.sort,
+      games: applyGameSort(
+        applyGameFilters(state.allGames, state.gameFilters),
+        payload.sort,
+      ),
     }));
   },
 });
@@ -86,6 +104,13 @@ export const getGameFiltersSelector = createSelector(
   gamesStateSelector,
   (state) => {
     return state.gameFilters;
+  },
+);
+
+export const getGameSortSelector = createSelector(
+  gamesStateSelector,
+  (state) => {
+    return state.gameSort;
   },
 );
 
