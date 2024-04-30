@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Language } from "../../enum";
+import { Language, Platform } from "../../enum";
 import { getGameFiltersSelector } from "../../store/slices";
 import { useAppDispatch } from "../../hooks";
 import { GameActions } from "../../store";
@@ -7,6 +7,8 @@ import { GameActions } from "../../store";
 type ReturnType = {
   languages: Language[];
   setLanguages: (languages: Language[]) => void;
+  platforms: Platform[];
+  setPlatforms: (platforms: Platform[]) => void;
 };
 
 export function useFilters(): ReturnType {
@@ -16,8 +18,15 @@ export function useFilters(): ReturnType {
     dispatch(GameActions.setFilters({ ...filters, languages }));
   };
 
+  const setPlatforms = (platforms: Platform[]) => {
+    dispatch(GameActions.setFilters({ ...filters, platforms }));
+  };
+
   return {
     languages: filters.languages,
     setLanguages,
+
+    platforms: filters.platforms,
+    setPlatforms,
   };
 }
