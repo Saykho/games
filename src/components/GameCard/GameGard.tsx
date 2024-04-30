@@ -1,7 +1,13 @@
 import React from "react";
-import { Carousel, DescriptionsProps, Typography } from "antd";
+import {
+  Carousel,
+  DescriptionsProps,
+  Table,
+  TableProps,
+  Typography,
+} from "antd";
 import { useTranslation } from "react-i18next";
-import { Game } from "../../models";
+import { Game, Multiplayer } from "../../models";
 import styles from "./GameGard.module.scss";
 
 interface GameGardProps {
@@ -10,6 +16,18 @@ interface GameGardProps {
 
 export const GameGard: React.FC<GameGardProps> = ({ game }) => {
   const { t } = useTranslation();
+
+  const columns: TableProps<Multiplayer & { id: number }>["columns"] = [
+    {
+      title: t("gameCard.offline"),
+      dataIndex: "offline",
+    },
+    {
+      title: t("gameCard.online"),
+      dataIndex: "online",
+    },
+  ];
+
   const params: DescriptionsProps["items"] = [
     {
       label: t("gameCard.title"),
@@ -26,6 +44,23 @@ export const GameGard: React.FC<GameGardProps> = ({ game }) => {
     {
       label: t("gameCard.language"),
       children: game.language.map((l) => t(`language.${l}`)).join(", "),
+    },
+    {
+      label: t("gameCard.multiplayer"),
+      children: (
+        <Table
+          rowKey="id"
+          pagination={false}
+          size="small"
+          columns={columns}
+          dataSource={[
+            {
+              ...game.multiplayer,
+              id: 1,
+            },
+          ]}
+        />
+      ),
     },
   ];
 

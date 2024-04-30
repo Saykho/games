@@ -7,6 +7,9 @@
     "title": "Название",
     "rating": "Рейтинг",
     "platform": "Платформа",
-    "language": "Язык"
+    "language": "Язык",
+    "multiplayer": "Коичество игроков",
+    "online": "Online",
+    "offline": "Offline"
   }
 }
