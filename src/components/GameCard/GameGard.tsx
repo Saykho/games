@@ -2,6 +2,7 @@ import React from "react";
 import {
   Carousel,
   DescriptionsProps,
+  Image,
   Table,
   TableProps,
   Typography,
@@ -66,7 +67,8 @@ export const GameGard: React.FC<GameGardProps> = ({ game }) => {
 
   return (
     <div className={styles.card}>
-      <img
+      <Image
+        width={200}
         src={`/mockScreenshots/${game.coverImage}`}
         alt={game.title}
         className={styles.avatar}
@@ -74,8 +76,12 @@ export const GameGard: React.FC<GameGardProps> = ({ game }) => {
 
       <Carousel autoplay className={styles.carousel}>
         {game.screenshots.map((s) => (
-          <div key={s} className={styles.cardCarousel}>
-            <img key={s} src={`/mockScreenshots/${s}`} alt="Screenshots" />
+          <div key={s}>
+            <Image
+              height={200}
+              src={`/mockScreenshots/${s}`}
+              alt="Screenshots"
+            />
           </div>
         ))}
       </Carousel>

@@ -72,7 +72,12 @@ export const GameFilters: React.FC = () => {
         <Button htmlType="submit">{t("gameFilters.applyMultiplayer")}</Button>
       </Form>
 
-      <Select value={sort} onChange={setSort} options={gameSorts} />
+      <Select
+        className={styles.select}
+        value={sort}
+        onChange={setSort}
+        options={gameSorts}
+      />
     </div>
   );
 };
